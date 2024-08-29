@@ -12,7 +12,7 @@ node_modules
 /backend/.env
 
 #environment
-# .env
+.env
 
 # testing
 /coverage
