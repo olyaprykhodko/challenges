@@ -4,12 +4,7 @@ node_modules
 .pnp.js
 
 #frontend
-/frontend/node_modules/
 /frontend/build/
-
-#backend
-/backend/node_modules/
-/backend/.env
 
 #environment
 .env
