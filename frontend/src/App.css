@@ -1,38 +1,271 @@
-.App {
-  text-align: center;
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+  color: #211f1e;
 }
 
-.App-link {
-  color: #61dafb;
+/* core classes & selectors */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  flex-grow: 1;
+}
+
+header,
+footer {
+  background-color: #c0392b;
+  text-align: center;
+  color: #ffffff;
+  padding: 8px;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 550;
+  color: #c0392b;
+  text-align: center;
+  margin-top: 10px;
+}
+
+h4 {
+  text-align: left;
+  font-size: large;
+  font-weight: 500;
+}
+
+a {
+  color: #c0392b;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 0;
+}
+
+/* top of the page - header, home button, logo button */
+.logo {
+  display: flex;
+}
+
+.home-button {
+  background-color: #c0392b;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.logo-button {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
+  font-weight: bold;
+  color: #dac7c2;
+  background-color: #c0392b;
+  padding: 3px;
+  cursor: pointer;
+  border: none;
+}
+
+.logo-button:hover {
+  background-color: #c0392b;
+}
+
+/* footer styles */
+.footer-text {
+  background-color: #c0392b;
+  color: #dac7c2;
+  display: block;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* add new task page */
+.add-task-btn {
+  display: block;
+  width: 200px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f4c430;
+}
+
+.add-new-task h2 {
+  text-align: start;
+  font-size: larger;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > div {
+  margin-bottom: 25px;
+}
+
+label {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #c0392b;
+}
+
+input[type='text'],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #211f1e;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  background-color: #ffffff;
+}
+
+input[type='text'] {
+  appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* styles of solution code container */
+.code-container {
+  display: flex;
+  margin-top: 20px;
+  background-color: #2e3440;
+  border-radius: 5px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.line-numbers {
+  background-color: #3b4252;
+  color: #d8dee9;
+  padding-right: 10px;
+  border-right: 2px solid #4c566a;
+  text-align: right;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-right: 10px;
+}
+
+.line-numbers span {
+  display: block;
+  padding: 0 5px;
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+code {
+  color: #d8dee9;
+  background-color: #2e3440;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+}
+
+.keyword {
+  color: #81a1c1;
+}
+
+.variable {
+  color: #d08770;
+}
+
+.string {
+  color: #a3be8c;
+}
+
+.function {
+  color: #b48ead;
+}
+
+/* other elements */
+.back-button {
+  font-family: 'Roboto', sans-serif;
+  width: 15cap;
+  font-size: 18px;
+  font-weight: bold;
+  color: #c0392b;
+  text-align: left;
+  background-color: #f4f4f9;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.list-elem {
+  background-color: #dac7c2;
+  display: block;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.list-elem:hover {
+  background-color: #f4c430;
+}
+
+.button {
+  padding: 10px 15px;
+  background-color: #f4c430;
+  color: #c0392b;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #dac7c2;
+}
+
+/* error / success messages */
+.error {
+  color: #c0392b;
+  font-size: 14px;
+}
+
+.success {
+  color: #055928;
+  font-size: 14px;
 }

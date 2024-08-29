@@ -27,12 +27,13 @@ const TopicList = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div>
-      <h1>Topics</h1>
+    <div className="task-list">
       <ul>
         {topics.map((topic, index) => (
           <li key={index}>
-            <Link to={`/tasks/${topic}`}>{topic}</Link>
+            <Link to={`/tasks/${topic}`} className="list-elem">
+              {topic}
+            </Link>
           </li>
         ))}
       </ul>

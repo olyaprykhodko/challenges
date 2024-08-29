@@ -12,8 +12,11 @@ mongoose
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.log(err));
 
-app.post('/tasks', async (req, res) => {
+app.post('/api/tasks', async (req, res) => {
+  console.log(req.body);
+  console.log('Received POST request on /api/tasks');
   const newTask = new Task(req.body);
+
   try {
     await newTask.save();
     res.status(201).send(newTask);
@@ -21,8 +24,6 @@ app.post('/tasks', async (req, res) => {
     res.status(400).send(err);
   }
 });
-
-app.get('/addtask', async (req, res) => {});
 
 app.get('/api/tasks', async (req, res) => {
   const { topic, title } = req.query;
