@@ -25,7 +25,7 @@ services:
     volumes:
       - ./backend:/app
     ports:
-      - "5000:5000"
+      - "3000:3000"
     depends_on:
       mongo:
         condition: service_healthy
@@ -36,8 +36,11 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     restart: always
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3500
     ports:
-      - "3000:3000"
+      - "3500:3500"
     volumes:
       - ./frontend:/app
       - /app/node_modules
